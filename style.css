@@ -1,0 +1,981 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+
+}
+body{
+    overflow-x: hidden;
+}
+::selection{
+    background-color: orange;
+}
+html{
+    font-size: 95%;
+}
+html::-webkit-scrollbar{
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: orange;
+    border-radius: 6rem;
+}
+header{
+    width: 100%;
+    position: fixed;
+    box-shadow:  0 0 10px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+.first-part{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0B121C;
+    padding:10px 10px 10px;
+}
+.logo{
+    color: white;
+}
+.first-part .bx-menu{
+    display: none;
+    overflow: hidden;
+}
+nav ul{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+nav ul li{
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li a{
+    color: white;
+    position: relative;
+}
+nav ul li a::after{
+    content: " ";
+    position: absolute;
+    background-color: orange;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s ease-in-out;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img i{
+    color: green;
+    font-size: 9px;
+    margin-left: 30px;
+    margin-bottom: 23px;
+    position: absolute;
+
+}
+.img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid orange;
+}
+.userlogin{
+    margin-top: 20px;
+    position: absolute;
+    width: 270px;
+    background-color: #0B121C;
+    height: 250px;
+    color: white;
+    right: 0px;
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    transition: .3s;
+    
+}
+.userlogin.open{
+    display: block;
+}
+.username{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.username span{
+    margin-left: 10px;
+}
+.userlink span i{
+    padding: 10px;
+    cursor: pointer;
+}
+.userlogin img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid green;
+    object-fit: cover;
+}
+.second-part{
+    background-color: #0B121C;
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.leftside span{
+    color: White;
+    font-size:40px;
+    padding: 10px;
+}
+.text{
+    color: White;
+    position: relative;
+    padding: 10px;
+}
+.first-text{
+    font-size: 25px;
+}
+.text.sec-text{
+    color: orange;
+    font-weight: bold;
+    font-size: 30px;
+}
+.sec-text::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0B121C;
+    border-left: 2px solid;
+    top: 0;
+    left: 0;
+    animation: animated 4s steps(12) infinite;
+}
+.connected i{
+    margin: 10px;
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+    border-left: 1px solid gray;
+    padding: 4px;
+    transition: .3s;
+}
+.connected i:hover{
+    color: tomato;
+    transform: scale(1.1);
+}
+.sociallogic{
+    margin-top: 80px;
+}
+.sociallogic img{
+    width: 210px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 120px;
+}
+.socialIcon{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconstart{
+    position: absolute;
+    transform: rotate(calc(360deg/7 * var(--i)));
+    transform-origin: 210px;
+    margin-right: 500px;
+    margin-bottom: 250px;
+    animation: iconmotion 13s linear infinite;
+}
+.iconstart i{
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+.thirdpart{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #0B121C;
+    width: 100%;
+    height: 100vh;
+}
+.images img{
+    width: 300px;
+    height: 350px;
+}
+.startnow .bio{
+    color: white;
+    margin: 15px;
+    position: relative;
+}
+.startnow .bio.active-bio::after{
+    width: 100%;
+  
+}
+.startnow .bio::after{
+    position: absolute;
+    content: " ";
+    width: 0%;
+    height: 3px;
+    background-color: orange;
+    bottom: -4px;
+    left: 0;
+}
+@keyframes iconmotion{
+   0%{
+    rotate: 0deg;
+   }
+   100%{
+    rotate: 360deg;
+   }
+}
+
+.iconstart i{
+    font-size: 32px;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow:0 0 5px rgba(0,0,0,0.6);
+}
+@keyframes animated{
+    40%,60%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+.context{
+    display: none;
+    margin: 10px;
+}
+.context li , span{
+    margin-top: 50px;
+}
+.bio{
+    font-size: 18px;
+}
+.context span{
+    color: orangered;
+    font-size: 18px;
+}
+.context.activeContext{
+    display: block;
+}
+.context li{
+    color: white;
+    font-size: 15px;
+}
+.our-service{
+    width: 100%;
+    background-color: #0B121C;
+}
+.allservices{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.allservices .card{
+    width: 250px;
+    height: 280px;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    transition: .4s ease-in;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 200%;
+    bottom: 0;
+    margin-bottom: -100px;
+    background: linear-gradient(#00ccff,#d400d4);
+    right: 70px;
+    animation: card 10s linear infinite;
+}
+.allservices .card .card-design{
+    z-index: 1000;
+}
+.allservices .card .card-design i{
+    font-size: 32px;
+}
+ .card::after{
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #0B121C;
+    border-radius: 20px;
+}
+@keyframes card{
+   0%{
+    transform: rotate(0deg);
+   }
+   100%{
+    transform: rotate(360deg);
+   }
+}
+.accortion{
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+}
+.contexttitle{
+    background-color: #2e5892;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    min-height: 56px;
+    
+}
+.accortion .titleof{
+    padding: 0 10px;
+    height: 0;
+
+}
+
+@media (max-width:550px){
+    body{
+        overflow-x: hidden;
+    }
+    html{
+        font-size: 80%;
+    }
+    html::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    html::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background-color: orange;
+        border-radius: 6rem;
+    }
+
+    .connected i{
+       display: none;
+    }
+    .allservices .card{
+        width: 200px;
+        height: 230px;
+        padding: 20px;
+    }
+    .allservices .card .card-design{
+        display: inline-block;
+    }
+    .images img{
+        display: none;
+    }
+  
+    .userlogin.open{
+        display: block;
+        z-index: 100;
+    }
+    .second-part{
+        width: 100%;
+        padding: 50px;
+    }
+ .leftside{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+ }
+ .iconstart{
+    position: absolute;
+    transform: rotate(calc(360deg/7 * var(--i)));
+    transform-origin: 150px;
+    margin-right: 500px;
+    margin-bottom: 1000px;
+    animation: iconmotion 13s linear infinite;
+}
+ .leftside span{
+    font-size: 22px;
+    padding: 0;
+ }
+ .text{
+    position: relative;
+ }
+
+ .text.sec-text{
+    font-size: 20px;
+    position: absolute;
+ }
+    .sociallogic{
+        margin-top: 620px;
+        position: relative;
+    }
+    .sociallogic img{
+        width: 150px;
+        height: 180px;
+        margin-bottom: 400px;
+        right: 50px;
+    }
+    .first-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .first-part .bx-menu{
+        display: block;
+        overflow: auto;
+        color: #F9004d;
+        font-size: 25px;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        background-color: #0B121C;
+        margin-top:0px ;
+        width: 100%;
+        left: 0;
+        box-shadow: 0px 0 10px rgba(0,0,0,0.3);
+    }
+    nav ul.open{
+        display: block;
+    }
+    .bio{
+        font-size: 15px;
+    }
+}
+@media (max-width:776px){
+    body{
+        overflow-wrap: hidden;
+    }
+    html{
+        font-size: 70%;
+    }
+    html::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    html::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background-color: orange;
+        border-radius: 6rem;
+    }
+    .images img{
+        display: none;
+    }
+    .bio{
+        font-size: 15px;
+    }
+    .first-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .logo{
+        display: none;
+    }
+    .first-part .bx-menu{
+        display: block;
+        overflow: auto;
+        color: #F9004d;
+        font-size: 25px;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        background-color: #0B121C;
+        margin-top:30px ;
+        width: 100%;
+        left: 0;
+        box-shadow: 0px 0 10px rgba(0,0,0,0.3);
+    }
+    nav ul.open{
+        display: block;
+    }
+    .second-part{
+        width: 100%;
+        padding: 50px;
+    }
+ .leftside{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+ }
+ .iconstart{
+    position: absolute;
+    transform: rotate(calc(360deg/7 * var(--i)));
+    transform-origin: 150px;
+    margin-right: 500px;
+    margin-bottom: 1000px;
+    animation: iconmotion 13s linear infinite;
+}
+ .leftside span{
+    font-size: 22px;
+    padding: 0;
+    z-index: ;
+ }
+ .text{
+    position: relative;
+ }
+
+ .text.sec-text{
+    font-size: 20px;
+    position: absolute;
+ }
+    .sociallogic{
+        margin-top: 620px;
+        position: relative;
+        right: 100px;
+    }
+    .sociallogic img{
+        width: 150px;
+        height: 180px;
+        margin-bottom: 400px;
+        right: 50px;
+    }
+}
+@media (max-width:577px){
+    body{
+        overflow-wrap: hidden;
+    }
+    html{
+        font-size: 70%;
+    }
+    html::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    html::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background-color: orange;
+        border-radius: 6rem;
+    }
+    .connected i{
+        display: none;
+     }
+    .bio{
+        font-size: 15px;
+    }
+    .first-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .logo{
+        display: none;
+    }
+    .first-part .bx-menu{
+        display: block;
+        overflow: auto;
+        color: #F9004d;
+        font-size: 25px;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        background-color: #0B121C;
+        margin-top:30px ;
+        width: 100%;
+        left: 0;
+        box-shadow: 0px 0 10px rgba(0,0,0,0.3);
+    }
+    nav ul.open{
+        display: block;
+    }
+    .second-part{
+        width: 100%;
+        padding: 50px;
+    }
+ .leftside{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+ }
+ .iconstart{
+    position: absolute;
+    transform: rotate(calc(360deg/7 * var(--i)));
+    transform-origin: 150px;
+    margin-right: 500px;
+    margin-bottom: 1000px;
+    animation: iconmotion 13s linear infinite;
+}
+ .leftside span{
+    font-size: 22px;
+    padding: 0;
+ }
+ .text{
+    position: relative;
+ }
+
+ .text.sec-text{
+    font-size: 20px;
+    position: absolute;
+ }
+    .sociallogic{
+        margin-top: 620px;
+        position: relative;
+        left: 10px;
+    }
+    .sociallogic img{
+        width: 150px;
+        height: 180px;
+        margin-bottom: 400px;
+        right: 50px;
+    }
+}
+
+@media (max-width:779px){
+    body{
+        overflow-wrap: hidden;
+    }
+    .connected i{
+        display: none;
+    }
+    html{
+        font-size: 70%;
+    }
+    html::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    html::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background-color: orange;
+        border-radius: 6rem;
+    }
+    .first-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .logo{
+        display: none;
+    }
+    .first-part .bx-menu{
+        display: block;
+        overflow: auto;
+        color: #F9004d;
+        font-size: 25px;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        background-color: #0B121C;
+        margin-top:30px ;
+        width: 100%;
+        left: 0;
+        box-shadow: 10px 0 10px rgba(0,0,0,0.3);
+    }
+    nav ul.open{
+        display: block;
+    }
+    .second-part{
+        width: 100%;
+        padding: 50px;
+    }
+ .leftside{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+ }
+ .iconstart{
+    position: absolute;
+    transform: rotate(calc(360deg/7 * var(--i)));
+    transform-origin: 150px;
+    margin-right: 500px;
+    margin-bottom: 1000px;
+    animation: iconmotion 13s linear infinite;
+}
+ .leftside span{
+    font-size: 22px;
+    padding: 0;
+ }
+ .text{
+    position: relative;
+ }
+
+ .text.sec-text{
+    font-size: 20px;
+    position: absolute;
+ }
+    .sociallogic{
+        margin-top: 620px;
+        position: relative;
+        right: 100px;
+    }
+    .sociallogic img{
+        width: 150px;
+        height: 180px;
+        margin-bottom: 400px;
+        right: 50px;
+    }
+}
+@media (max-width:370px){
+    body{
+        overflow-wrap: hidden;
+        width: 100%;
+        height: 100%;
+    }
+    html::-webkit-scrollbar{
+        width: 0.5rem;
+    }
+    html::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+    html::-webkit-scrollbar-thumb{
+        background-color: orange;
+        border-radius: 6rem;
+    }
+    html{
+        font-size: 50%;
+    }
+    .connected i{
+        display: none;
+     }
+    .first-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .logo{
+        display: none;
+    }
+    .first-part .bx-menu{
+        display: block;
+        overflow: auto;
+        color: #F9004d;
+        font-size: 25px;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        background-color: #0B121C;
+        margin-top:30px ;
+        width: 100%;
+        left: 0;
+        box-shadow: 10px 0 10px rgba(0,0,0,0.3);
+    }
+    nav ul.open{
+        display: block;
+    }
+    .second-part{
+        width: 100%;
+        padding: 50px;
+    }
+ .leftside{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+ }
+ .iconstart{
+    position: absolute;
+    transform: rotate(calc(360deg/7 * var(--i)));
+    transform-origin: 150px;
+    margin-right: 500px;
+    margin-bottom: 1000px;
+    animation: iconmotion 13s linear infinite;
+}
+ .leftside span{
+    font-size: 22px;
+    padding: 0;
+ }
+ .text{
+    position: relative;
+ }
+
+ .text.sec-text{
+    font-size: 20px;
+    position: absolute;
+ }
+    .sociallogic{
+        margin-top: 620px;
+        position: relative;
+        right: 100px;
+    }
+    .sociallogic img{
+        width: 150px;
+        height: 180px;
+        margin-bottom: 400px;
+        right: 50px;
+    }
+}
+@media (max-width:777px){
+    html{
+        font-size: 70%;
+    }
+ .thirdpart img{
+    display: none;
+ }
+}
+@media (max-width:541px){
+    html{
+        font-size: 70%;
+    }
+ .thirdpart img{
+    display: none;
+ }
+ .sociallogic{
+    top: 70px;
+ }
+}
+@media (max-width:984px){
+    html{
+        font-size: 70%;
+    }
+    .leftside{
+        max-width: 550px;
+    }
+    .leftside span{
+        font-size: 20px;
+    }
+    .fancy-text .text{
+        font-size: 20px;
+    }
+}
+@media (max-width:763px){
+    body{
+        overflow-wrap: hidden;
+    }
+    html{
+        font-size: 70%;
+    }
+    .first-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .logo{
+        display: none;
+    }
+    .first-part .bx-menu{
+        display: block;
+        overflow: auto;
+        color: #F9004d;
+        font-size: 25px;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        background-color: #0B121C;
+        margin-top:30px ;
+        width: 100%;
+        left: 0;
+        box-shadow: 10px 0 10px rgba(0,0,0,0.3);
+    }
+    nav ul.open{
+        display: block;
+    }
+    .second-part{
+        width: 100%;
+        padding: 50px;
+    }
+ .leftside{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+ }
+ .iconstart{
+    position: absolute;
+    transform: rotate(calc(360deg/7 * var(--i)));
+    transform-origin: 150px;
+    margin-right: 500px;
+    margin-bottom: 1000px;
+    animation: iconmotion 13s linear infinite;
+}
+ .leftside span{
+    font-size: 22px;
+    padding: 0;
+    z-index: ;
+ }
+ .text{
+    position: relative;
+ }
+
+ .text.sec-text{
+    font-size: 20px;
+    position: absolute;
+ }
+    .sociallogic{
+        margin-top: 620px;
+        position: relative;
+        right: 100px;
+    }
+    .sociallogic img{
+        width: 150px;
+        height: 180px;
+        margin-bottom: 400px;
+        right: 50px;
+    }
+}
+@media (max-width:100px){
+    body{
+        overflow-wrap: hidden;
+    }
+    html{
+        font-size: 50%;
+    }
+    .first-part {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+    .logo{
+        display: none;
+    }
+    .user-account{
+        display: none;
+    }
+    .first-part .bx-menu{
+        display: block;
+        overflow: auto;
+        color: #F9004d;
+        font-size: 25px;
+        margin: auto;
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        background-color: #0B121C;
+        margin-top:20px ;
+        width: 100%;
+        left: 0;
+        box-shadow: 10px 0 10px rgba(0,0,0,0.3);
+    }
+    nav ul.open{
+        display: block;
+    }
+}
